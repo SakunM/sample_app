@@ -1,3 +1,9 @@
+rails generate controller Users new
+rails destroy controller User new
+
+rails test:integration
+rails generate integration_test site_layout
+
 rails generate controller Foo bar baz
 rails destroy controller Foo bar baz
 
