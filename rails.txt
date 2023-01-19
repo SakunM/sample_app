@@ -1,3 +1,18 @@
+m = User.new(name: 'mamo', email: 'mamo@exe.com', password: 'ho', password_confirmation: 'ho')
+
+rails generate migration add_password_digest_to_users password_digest:string
+rails generate migration add_index_to_users_email
+
+rails test:models
+rails test test/models/user_test.rb
+
+foo = User.create(name: 'Foo', email: 'foo@bar.com')
+User.create(name: 'A Nother', email: 'another@example.org')
+user = User.new(name: 'Michael Hartl', email: 'maichael@example.com')
+
+rails db:migrate  と rails db:rollback は、対応関係だ。
+rails generate model User name:string email:string
+
 rails generate controller Users new
 rails destroy controller User new
 
