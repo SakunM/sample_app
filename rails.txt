@@ -1,3 +1,5 @@
+rails test test/helpers/sessions_helper_test.rb
+
 rails generate migration add_remember_digest_to_users remember_digest:string
 rails importmap:install turbo:install stimulus:install
 
