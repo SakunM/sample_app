@@ -26,3 +26,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert is_logged_in?
   end
 end
+
+__END__
+rails test test/integration/users_signup_test.rb
+rails test:integration

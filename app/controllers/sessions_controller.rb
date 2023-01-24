@@ -20,3 +20,12 @@ class SessionsController < ApplicationController
     redirect_to root_url, status: :see_other
   end
 end
+
+__END__
+!!(u && u.authenticate('foobar'))
+
+session = {}
+session[:user_id] = nil
+@current_user ||= User.find_by(id: session[:user_id])
+
+session[:user_id] = User.first.id

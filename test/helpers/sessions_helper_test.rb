@@ -16,3 +16,7 @@ class SessionsHelperTest < ActionView::TestCase
     assert_nil current_user
   end
 end
+
+__END__
+rails test test/helpers/sessions_helper_test.rb
+rails test:helpers

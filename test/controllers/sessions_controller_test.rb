@@ -6,3 +6,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 end
+
+__END__
+rails test test/controllers/sessions_controller_test.rb
+rails test:controllers

@@ -76,3 +76,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?('')
   end
 end
+
+__END__
+rails test test/models/user_test.rb
+rails test:models

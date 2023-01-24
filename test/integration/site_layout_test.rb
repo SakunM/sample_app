@@ -14,3 +14,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select 'title', full_title('Sign up')
   end
 end
+
+__END__
+rails test test/integration/site_layout_test.rb
+rails test:integration

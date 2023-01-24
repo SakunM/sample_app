@@ -29,3 +29,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Contact | #{@title}"
   end
 end
+
+__END__
+rails test test/controllers/static_pages_controller_test.rb
+rails test:controllers

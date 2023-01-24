@@ -11,3 +11,7 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_equal "Help | #{@title}", full_title('Help')
   end
 end
+
+__END__
+rails test test/helpers/application_helper_test.rb
+rails test:helpers
