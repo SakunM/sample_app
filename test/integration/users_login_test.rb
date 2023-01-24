@@ -90,3 +90,7 @@ end
 __END__
 rails test test/integration/users_login_test.rb
 rails test:integration
+
+test/models/user_test.rb      u_t
+test/test_helper.rb           th
+test/integration/users_login_test.rb    ult

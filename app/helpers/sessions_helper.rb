@@ -42,3 +42,10 @@ module SessionsHelper
     !current_user.nil?
   end
 end
+
+__END__
+app/models/user.rb   user
+app/controllers/sessions_controller.rb  ns_c
+app/helpers/sessions_helper.rb          ns_h
+
+app/views/sessions/new.html.erb        ses/n

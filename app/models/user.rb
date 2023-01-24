@@ -12,7 +12,8 @@ class User < ApplicationRecord
 
   class << self
     def digest(word)
-      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+      cost = ActiveModel::SecurePassword.min_cost ? 
+        BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
       BCrypt::Password.create(word, cost: cost)
     end
   
@@ -41,3 +42,8 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 end
+
+__END__
+app/models/user.rb   user
+app/controllers/sessions_controller.rb  ns_c
+app/helpers/sessions_helper.rb          ns_h
