@@ -1,1 +1,1 @@
-rails db:create db:migrate
+rails db:create db:migrate && rails db:seed

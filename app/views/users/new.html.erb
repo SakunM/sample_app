@@ -3,16 +3,18 @@
 
 <div class="row">
   <div class="col-md-6 col-mid-offset-3">
-    <%= render 'shared/error_messages' %>
-    
-    <%= form_with(model: @user) do |f| %>
-      <%= f.label :name %><%= f.text_field :name %>
-      <%= f.label :email %><%= f.email_field :email %>
-      <%= f.label :password %><%= f.text_field :password %>
-      <%= f.label :password_confirmation %>
-      <%= f.text_field :password_confirmation %>
-
-      <%= f.submit 'Create my account', class: 'btn btn-primary' %>
-    <% end %>
+    <%= render 'form' %>
   </div>
 </div>
+
+<%#=
+  app/models/user.rb   user
+  app/controllers/sessions_controller.rb  ns_c
+  app/controllers/users_controller.rb     rs_c
+  app/helpers/sessions_helper.rb          ns_h
+
+  app/views/users/edit.html.erb           u/e
+  app/views/users/new.html.erb			u/n
+  app/views/users/_form.html.erb          _f
+  app/views/layouts/_header.html.erb      _h
+%>

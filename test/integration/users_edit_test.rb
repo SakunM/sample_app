@@ -9,33 +9,42 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_equal 1, 1
   end
 
-  # test "unsuccessful edit" do
-  #   log_in_as(@user)
-  #   get edit_user_path(@user)
-  #   assert_template 'users/edit'
-  #   patch user_path(@user), params: { user: { name: '',
-  #     email: 'foo@invalid', password: 'foo', password_confirmation: 'bar'}}
-  #   assert_template 'users/edit'
-  #   assert_select 'div.alert', 'The form contains 4 errors.'
-  # end
+  test "unsuccessful edit" do
+    log_in_as(@user)
+    get edit_user_path(@user)
+    assert_template 'users/edit'
+    patch user_path(@user), params: { user: { name: '',
+      email: 'foo@invalid', password: 'foo', password_confirmation: 'bar'}}
+    assert_template 'users/edit'
+    assert_select 'div.alert', 'The form contains 4 errors.'
+  end
 
-  # test "successful edit with friendly forwarding" do
-  #   get edit_user_path(@user)
-  #   assert session[:forwarding_url].include? edit_user_path(@user)
-  #   log_in_as(@user)
-  #   assert_redirected_to edit_user_url(@user)
-  #   name = 'Foo Bar'
-  #   email = 'foo@bar.com'
-  #   patch user_path(@user), params: { user: {name: name, 
-  #     email: email, password: '', password_confirmation: ''}}
-  #   assert_not flash.empty?
-  #   assert_redirected_to @user
-  #   @user.reload
-  #   assert_equal name, @user.name
-  #   assert_equal email, @user.email
-  # end
+  test "successful edit with friendly forwarding" do
+    get edit_user_path(@user)
+    assert session[:forwarding_url].include? edit_user_path(@user)
+    log_in_as(@user)
+    assert_redirected_to edit_user_url(@user)
+    name = 'Foo Bar'
+    email = 'foo@bar.com'
+    patch user_path(@user), params: { user: {name: name, 
+      email: email, password: '', password_confirmation: ''}}
+    assert_not flash.empty?
+    assert_redirected_to @user
+    @user.reload
+    assert_equal name, @user.name
+    assert_equal email, @user.email
+  end
 end
 
 __END__
 rails test test/integration/users_edit_test.rb
 rails test:integration
+
+test/models/user_test.rb      u_t
+test/test_helper.rb           th
+test/integration/users_login_test.rb    ult
+test/integration/users_edit_test.rb     uet
+test/controllers/users_controller_test.rb	usct
+test/fixtures/users.yml tfu
+
+session[:forwarding_url]

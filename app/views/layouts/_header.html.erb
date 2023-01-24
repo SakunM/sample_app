@@ -14,14 +14,14 @@
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", help_path %></li>
         <% if logged_in? %>
-          <li><%= link_to 'Users', '#' %></li>
+          <li><%= link_to 'Users', users_path %></li>
           <li class="dropdown">
             <a href="#" id="account" class="dropdown-toggle">
               Accout <b class="caret"></b>
             </a>
             <ul id="dropdwon-menu" class="dropdown-menu">
               <li><%= link_to 'Profile', current_user %></li>
-              <li><%= link_to 'Settings', '#' %></li>
+              <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to 'Log out', logout_path,
@@ -36,3 +36,15 @@
     </nav>
   </div>
 </header>
+
+
+<%#=
+  app/models/user.rb   user
+  app/controllers/sessions_controller.rb  ns_c
+  app/controllers/users_controller.rb     rs_c
+  app/helpers/sessions_helper.rb          ns_h
+
+  app/views/users/edit.html.erb           u/e
+  app/views/layouts/_header.html.erb      _h
+  app/views/users/_form.html.erb          _f
+%>
