@@ -1,1 +1,31 @@
-tarbo
+rails generate mailer UserMailer account_activation password_reset
+rails generate migration add_activation_to_users activation_digest:string activated:boolean activated_at:datetime
+rails generate controller AccountActivations
+
+11章の後半から、テストスイートだとテストデータベースがロックするようになった
+rails test:controllers
+rails test:integration
+rails test:helpers
+rails test:mailers
+rails test:models
+
+rails generate migration add_activation_to_users activation_digest:string activated:boolean activated_at:datetime
+rails generate controller AccountActivations
+rails generate scaffold User name:string email:string
+rails generate scaffold Micropost content:text user_id:integer
+rails db:migrate
+rails db:rollback
+rails generate controller StaticPages home help
+rails test:controllers
+rails generate integration_test site_layout
+rails test:integration
+rails test:helpers
+rails generate controller Users new
+rails generate model User name:string email:string
+rails db:migrate
+rails generate migration add_index_to_users_email
+rails generate migration add_password_digest_to_users password_digest:string
+rails generate integration_test users_signup
+rails db:migrate
+rails generate controller Sessions new
+rails generate integration_test users_login

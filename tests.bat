@@ -1,0 +1,1 @@
+rails test:controllers && rails test:integration && rails test:helpers && rails test:mailers && rails test:models

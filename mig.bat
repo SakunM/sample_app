@@ -1,1 +1,1 @@
-rails db:create db:migrate && rails db:seed
+del a:\pj\ruby\sample_app\db\development.sqlite3 && rails db:create db:migrate && rails db:seed

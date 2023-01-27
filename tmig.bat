@@ -1,0 +1,1 @@
+del a:\pj\ruby\sample_app\db\test.sqlite3 && rails db:migrate RAILS_ENV=test

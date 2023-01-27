@@ -23,20 +23,6 @@ class InvalidPasswordTest < UsersLogin
   end
 end
 
-class RememberingTest < UsersLogin
-  test "login with remembering" do
-    log_in_as(@user, remember_me: '1')
-    assert_equal @user.name, assigns(:user).name
-  end
-
-  test "login without remembering" do
-    log_in_as(@user, remember_me: '1')
-    delete logout_path
-    log_in_as(@user, remember_me: '0')
-    assert_empty cookies[:remember_token]
-  end
-end
-
 class ValidLogin < UsersLogin
   def setup
     super
@@ -87,10 +73,19 @@ class LogoutTest < Logout
   end
 end
 
-__END__
-rails test test/integration/users_login_test.rb
-rails test:integration
+class RememberingTest < UsersLogin
+  test "login with remembering" do
+    log_in_as(@user, remember_me: '1')
+    assert_equal @user.name, assigns(:user).name
+  end
 
-test/models/user_test.rb      u_t
-test/test_helper.rb           th
-test/integration/users_login_test.rb    ult
+  test "login without remembering" do
+    log_in_as(@user, remember_me: '1')
+    delete logout_path
+    log_in_as(@user, remember_me: '0')
+    assert_empty cookies[:remember_token]
+  end
+end
+
+__END__
+
