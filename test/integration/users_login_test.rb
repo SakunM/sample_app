@@ -88,4 +88,5 @@ class RememberingTest < UsersLogin
 end
 
 __END__
+rails test test/integration/users_login_test.rb
 

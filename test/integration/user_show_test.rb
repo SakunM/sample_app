@@ -18,3 +18,6 @@ class UsersShowTest < ActionDispatch::IntegrationTest
     assert_template 'users/show'
   end
 end
+
+__END__
+rails test test/integration/user_show_test.rb

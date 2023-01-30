@@ -75,11 +75,3 @@ __END__
 test for edit,update action
 rails test test/controllers/users_controller_test.rb
 rails test:controllers
-
-test/models/user_test.rb      u_t
-test/test_helper.rb           th
-test/integration/users_login_test.rb    ult
-test/integration/users_edit_test.rb     uet
-test/integration/site_layout_test.rb    slt
-test/controllers/users_controller_test.rb	usct
-test/fixtures/users.yml tfu
