@@ -68,6 +68,22 @@ class MicropostSidebarTest < MicropostsInterface
   end
 end
 
+class ImageUploadTest < MicropostsInterface
+
+  test "should have a file input field for images" do
+    get root_path
+    assert_select 'input[type=submit]'
+  end
+
+  test "should be able to attah an image" do
+    cost = 'This micropost raally ties the room together'
+    img = fixture_file_upload('cat.png', 'image/png')
+    post microposts_path, params: { micropost: {
+      content: cost, image: img }}
+    assert assigns(:micropost).image.attached?
+  end
+end
+
 __END__
 rails test test/integration/microposts_interface_test.rb
 rails test:integration
