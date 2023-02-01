@@ -1,3 +1,8 @@
+rails generate controller Relationships
+rails generate integration_test following
+
+rails generate model Relationship follower_id:integer followed_id:integer
+
 rails active_storage:install
 
 rails generate integration_test microposts_interface
